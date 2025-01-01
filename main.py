@@ -1,23 +1,26 @@
 import os
 
+def carros():
+    carros = {
+        "Chevrolet Tracker": 120,
+        "Chevrolet Onix": 90,
+        "Chevrolet Spin": 150,
+        "Hyundai HB20": 85,
+        "Hyundai Tucson": 120,
+        "Fiat Uno": 60,
+        "Fiat Mobi": 70,
+        "Fiat Pulse": 130
+    }
+
+    for index, (chave, valor) in enumerate(carros.items()):
+        print(f"[{index}] - {chave} - R$ {valor}/dia")
+
 def apresentar_carros():
     os.system("cls" if os.name == "nt" else "clear")
 
     print("[GARAGEM]\n")
 
-    carros = [
-        "Chevrolet Tracker - R$ 120 /dia",
-        "Chevrolet Onix - R$ 90 /dia",
-        "Chevrolet Spin - R$ 150 /dia",
-        "Hyundai HB20 - R$ 85 /dia",
-        "Hyundai Tucson - R$ 120 /dia",
-        "Fiat Uno - R$ 60 /dia",
-        "Fiat Mobi - R$ 70 /dia",
-        "Fiat Pulse - R$ 130 /dia"
-    ]
-
-    for i, carro in enumerate(carros):
-        print(f"[{i}] - {carro}")
+    carros()
 
     while True:
         resposta = input("\nDeseja alugar um veículo? \n[S]/[N]: ").upper().strip()
@@ -38,19 +41,7 @@ def alugar_carro():
 
     print("[Aluguel]\n")
 
-    carros = [
-        "Chevrolet Tracker - R$ 120 /dia",
-        "Chevrolet Onix - R$ 90 /dia",
-        "Chevrolet Spin - R$ 150 /dia",
-        "Hyundai HB20 - R$ 85 /dia",
-        "Hyundai Tucson - R$ 120 /dia",
-        "Fiat Uno - R$ 60 /dia",
-        "Fiat Mobi - R$ 70 /dia",
-        "Fiat Pulse - R$ 130 /dia"
-    ]
-
-    for i, carro in enumerate(carros):
-        print(f"[{i}] - {carro}")    
+    carros()   
 
     while True:
         try:
@@ -62,8 +53,6 @@ def alugar_carro():
                 print("\nOPÇÃO INVÁLIDA! Selecione uma opção entre 0 e 7")                
         except ValueError:
             print("\nOPÇÃO INVÁLIDA! Selecione uma opção entre 0 e 7")
-    
-    print(carro_selecionado)
 
 def menu_principal():
     print("-"*45)
