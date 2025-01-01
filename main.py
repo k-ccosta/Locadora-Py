@@ -30,8 +30,40 @@ def apresentar_carros():
     if resposta == "S":
         ... #chamar função de aluguel de carro
     else: 
-        os.system("clear")
+        os.system("clear") #ajustar o comando de limpeza de tela
         iniciar_locadora()
+
+def alugar_carro():
+    os.system("cls" if os.name == "nt" else "clear")
+
+    print("[Aluguel]\n")
+
+    carros = [
+        "Chevrolet Tracker - R$ 120 /dia",
+        "Chevrolet Onix - R$ 90 /dia",
+        "Chevrolet Spin - R$ 150 /dia",
+        "Hyundai HB20 - R$ 85 /dia",
+        "Hyundai Tucson - R$ 120 /dia",
+        "Fiat Uno - R$ 60 /dia",
+        "Fiat Mobi - R$ 70 /dia",
+        "Fiat Pulse - R$ 130 /dia"
+    ]
+
+    for i, carro in enumerate(carros):
+        print(f"[{i}] - {carro}")    
+
+    while True:
+        try:
+            carro_selecionado = int(input("\nQual carro deseja alugar? "))
+
+            if carro_selecionado in range(8):
+                break
+            else:
+                print("\nOPÇÃO INVÁLIDA! Selecione uma opção entre 0 e 7")                
+        except ValueError:
+            print("\nOPÇÃO INVÁLIDA! Selecione uma opção entre 0 e 7")
+    
+    print(carro_selecionado)
 
 def menu_principal():
     print("-"*45)
@@ -64,7 +96,7 @@ def submenus():
     if opcao_submenu_escolhida == 0:
         apresentar_carros()
     elif opcao_submenu_escolhida == 1:
-        print("[Alugar]")
+        alugar_carro()
     else:
         print("[Devolver]")
         
