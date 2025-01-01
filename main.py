@@ -19,6 +19,20 @@ def apresentar_carros():
     for i, carro in enumerate(carros):
         print(f"[{i}] - {carro}")
 
+    while True:
+        resposta = input("\nDeseja alugar um veículo? \n[S]/[N]: ").upper().strip()
+            
+        if resposta not in ["S", "N"]:
+            print("Erro: Por favor, insira 'S' para Sim ou 'N' para Não.")
+        else:
+            break
+
+    if resposta == "S":
+        ... #chamar função de aluguel de carro
+    else: 
+        os.system("clear")
+        iniciar_locadora()
+
 def menu_principal():
     print("-"*45)
     print("Bem-Vindo à locadora Cars by Kelvin")
